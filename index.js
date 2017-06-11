@@ -546,9 +546,7 @@ if(commandIs('dm', message)){
 
 rbx.getIdFromUsername(args[0])
 .then(function (user) {
-  var argu = message.content.substring(args[0])
-  console.log(argu)
-  var namam = argu.split(' ', 0)
+  var namam = message.content.split(' ', 1)
   var options = {
     group: 3030452,
     target: user,
