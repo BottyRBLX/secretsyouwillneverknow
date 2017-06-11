@@ -568,7 +568,7 @@ rbx.getIdFromUsername(args[0])
 }
 
 if(commandIs('robloxsetup', message)){
-  if(!args[0] || !args[1] ||){
+  if(!args[0] || !args[1]){
     message.channel.send('No username/password provided. Current username: ' + info.username)
   } else {
     if(message.member.hasPermission('ADMINISTRATOR')){
