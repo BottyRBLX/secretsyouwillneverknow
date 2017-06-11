@@ -561,11 +561,63 @@ rbx.getIdFromUsername(args[0])
   .then(function (newRole) {
     message.channel.send('The new role is: ' + JSON.stringify(newRole));
   });
-}); 
+});
   } else {
        message.channel.send('No user account has been linked or you have not provided a group id.')
        }
-} 
+}
+
+if(commandIs('robloxsetup', message)){
+  if(!args[0] || !args[1] ||){
+    message.channel.send('No username/password provided. Current username: ' + info.username)
+  } else {
+    if(message.member.hasPermission('ADMINISTRATOR')){
+      var guild = message.guild
+      setset = {
+        prefix: info.prefix,
+        vip: info.vip,
+        annchannel: info.annchannel,
+        modrole: info.modrole,
+        disabledcommands: info.disabledcommands,
+        username: args[0],
+        password: args[1],
+        groupid: info.groupid
+      }
+      if(rbx.login(args[0], args[1])){
+      var abn = JSON.stringify(setset)
+      fs.writeFile('./data/'+message.guild.id+'.json', abn, 'utf8')
+      message.channel.send('Successfully linked account **' + args[0] + '**')
+    }
+  } else {
+    message.channel.send('Only server administrators can run this command.')
+  }
+  }
+}
+
+if(commandIs('setgroup', message)){
+  if(!args[0]){
+    message.channel.send('Please provide a group ID')
+  } else {
+    if(message.member.hasPermission('ADMINISTRATOR')){
+      setset = {
+        prefix: info.prefix,
+        vip: info.vip,
+        annchannel: info.annchannel,
+        modrole: info.modrole,
+        disabledcommands: info.disabledcommands,
+        username: info.username,
+        password: info.groupid,
+        groupid: args[0]
+      }
+      var abn = JSON.stringify(setset)
+      fs.writeFile('./data/'+message.guild.id+'.json', abn, 'utf8')
+      message.channel.send('Successfully linked group **' + args[0] + '**')
+    } else {
+      message.channel.send('Only server administrators can run this command.')
+    }
+  }
+}
+
 });
 
 bot.login('MzIwOTU5NTEzMjcwMTU3MzEz.DB63Kg.2zNs4M0ICzHiVuYrehZj1mYZbnM')
