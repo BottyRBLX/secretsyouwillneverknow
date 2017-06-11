@@ -72,6 +72,13 @@ rbx.setRank(options)
 }
 }
 
+  
+  if(commandIs('getroles', message)){
+  rbx.getRoles(args[0)
+                    .then(function (roles) {
+                    message.channel.send(roles)
+                    }
+  }
 });
 
 bot.login('MzIzMDc5ODM4NjA2OTUwNDEw.DB17Dw.1slqAIWNwOaIIVxBMOCfV2OLiu8')
