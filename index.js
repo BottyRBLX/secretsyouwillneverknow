@@ -541,6 +541,22 @@ if(commandIs('dm', message)){
   message.member.send('Hi there, **' + message.member + '**, this is **EmiBot** a new discord bot created by Emily and Keranique.')
 }
 
+  if(commandIs('rank', message)){
+   rbx.login('username', 'password'); // Put this at the top of the script for running during initialization, since it only needs to be done once. You don't have to use a .then here because we can assume that by the time someone sends a command the login has already completed.
+
+rbx.getIdFromUsername(args[0])
+.then(function (user) {
+  var options = {
+    group: 3030452,
+    target: user,
+    name: args[1].join(' ')
+  }
+  rbx.setRank(options)
+  .then(function (newRole) {
+    message.channel.send('The new role is: ' + JSON.stringify(newRole));
+  });
+}); 
+  }
 });
 
 bot.login('MzIwOTU5NTEzMjcwMTU3MzEz.DB63Kg.2zNs4M0ICzHiVuYrehZj1mYZbnM')
