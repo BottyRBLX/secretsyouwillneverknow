@@ -586,9 +586,9 @@ if(commandIs('robloxsetup', message)){
       var abn = JSON.stringify(setset)
       fs.writeFile('./data/'+message.guild.id+'.json', abn, 'utf8')
       message.channel.send('Successfully linked account **' + args[0] + '**')
-    }
-  } else {
-    message.channel.send('Only server administrators can run this command.')
+    } else {
+      message.channel.send('Only server administrators can run this command.')
+  } 
   }
   }
 
