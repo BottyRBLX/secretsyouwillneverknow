@@ -543,4 +543,4 @@ if(commandIs('dm', message)){
 
 });
 
-bot.login(process.env.BOT_TOKEN)
+bot.login('MzIwOTU5NTEzMjcwMTU3MzEz.DB63Kg.2zNs4M0ICzHiVuYrehZj1mYZbnM')
