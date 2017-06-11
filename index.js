@@ -583,7 +583,6 @@ if(commandIs('robloxsetup', message)){
         password: args[1],
         groupid: info.groupid
       }
-      if(rbx.login(args[0], args[1])){
       var abn = JSON.stringify(setset)
       fs.writeFile('./data/'+message.guild.id+'.json', abn, 'utf8')
       message.channel.send('Successfully linked account **' + args[0] + '**')
@@ -592,7 +591,6 @@ if(commandIs('robloxsetup', message)){
     message.channel.send('Only server administrators can run this command.')
   }
   }
-}
 
 if(commandIs('setgroup', message)){
   if(!args[0]){
