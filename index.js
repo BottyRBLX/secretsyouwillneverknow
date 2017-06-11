@@ -77,7 +77,7 @@ rbx.setRank(options)
   rbx.getRoles(args[0])
                     .then(function (roles) {
                     message.channel.send(roles)
-                    )}
+                    })
   }
 });
 
