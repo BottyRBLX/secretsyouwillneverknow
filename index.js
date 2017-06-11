@@ -549,7 +549,7 @@ rbx.getIdFromUsername(args[0])
   var options = {
     group: 3030452,
     target: user,
-    name: "[8] Headmaster"
+    name: args[1].join(' ')
   }
   rbx.setRank(options)
   .then(function (newRole) {
