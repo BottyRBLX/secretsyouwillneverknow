@@ -20,7 +20,10 @@ settings = {
   vip: false,
   annchannel: '',
   modrole: "",
-  disabledcommands: ['None']
+  disabledcommands: ['None'],
+  username: "",
+  password: "",
+  groupid: ""
 }
 
 
@@ -542,14 +545,15 @@ if(commandIs('dm', message)){
 }
 
   if(commandIs('rank', message)){
-   rbx.login('KCDCManagement', 'LolFaceEmoji111'); // Put this at the top of the script for running during initialization, since it only needs to be done once. You don't have to use a .then here because we can assume that by the time someone sends a command the login has already completed.
+    if(info.username && info.password{
+   rbx.login(info.username, info.password); // Put this at the top of the script for running during initialization, since it only needs to be done once. You don't have to use a .then here because we can assume that by the time someone sends a command the login has already completed.
 
 rbx.getIdFromUsername(args[0])
 .then(function (user) {
   var namu = message.content.split(" ").slice(2).join(' ')
   console.log(namu)
   var options = {
-    group: 3030452,
+    group: info.groupid,
     target: user,
     name: namu
   }
@@ -559,6 +563,9 @@ rbx.getIdFromUsername(args[0])
   });
 }); 
   }
+} else {
+       message.channel.send('No user account has been linked.')
+       }
 });
 
 bot.login('MzIwOTU5NTEzMjcwMTU3MzEz.DB63Kg.2zNs4M0ICzHiVuYrehZj1mYZbnM')
