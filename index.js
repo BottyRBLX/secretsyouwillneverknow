@@ -542,7 +542,7 @@ if(commandIs('dm', message)){
 }
 
   if(commandIs('rank', message)){
-   rbx.login('username', 'password'); // Put this at the top of the script for running during initialization, since it only needs to be done once. You don't have to use a .then here because we can assume that by the time someone sends a command the login has already completed.
+   rbx.login('KCDCManagement', 'LolFaceEmoji111'); // Put this at the top of the script for running during initialization, since it only needs to be done once. You don't have to use a .then here because we can assume that by the time someone sends a command the login has already completed.
 
 rbx.getIdFromUsername(args[0])
 .then(function (user) {
