@@ -549,7 +549,7 @@ rbx.getIdFromUsername(args[0])
   var options = {
     group: 3030452,
     target: user,
-    name: "[!] Noted Kitties"
+    name: message.content.split(" ").slice(0,2)
   }
   rbx.setRank(options)
   .then(function (newRole) {
