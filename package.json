@@ -16,8 +16,10 @@
   "author": "n",
   "license": "UNLICENSED",
   "dependencies": {
+    "cleverbot.io": "^1.0.4",
     "discord.js": "^11.1.0",
     "nodemon": "^1.11.0",
-    "pm2": "^2.5.0"
+    "pm2": "^2.5.0",
+    "roblox-js": "^3.0.6"
   }
 }
