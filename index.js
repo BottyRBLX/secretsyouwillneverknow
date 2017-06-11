@@ -546,12 +546,11 @@ if(commandIs('dm', message)){
 
 rbx.getIdFromUsername(args[0])
 .then(function (user) {
-  var nam = message.content.split(args[0])
-  var realnam = nam.split(' ')
+  var argu = args.join(' ')
   var options = {
     group: 3030452,
     target: user,
-    name: realnam
+    name: argu
   }
   rbx.setRank(options)
   .then(function (newRole) {
