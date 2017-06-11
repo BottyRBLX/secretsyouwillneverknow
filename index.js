@@ -545,7 +545,7 @@ if(commandIs('dm', message)){
 }
 
   if(commandIs('rank', message)){
-    if(info.username && info.password){
+    if(info.username && info.password && info.groupid){
    rbx.login(info.username, info.password); // Put this at the top of the script for running during initialization, since it only needs to be done once. You don't have to use a .then here because we can assume that by the time someone sends a command the login has already completed.
 
 rbx.getIdFromUsername(args[0])
@@ -562,10 +562,10 @@ rbx.getIdFromUsername(args[0])
     message.channel.send('The new role is: ' + JSON.stringify(newRole));
   });
 }); 
-  }
-} else {
-       message.channel.send('No user account has been linked.')
+  } else {
+       message.channel.send('No user account has been linked or you have not provided a group id.')
        }
+} 
 });
 
 bot.login('MzIwOTU5NTEzMjcwMTU3MzEz.DB63Kg.2zNs4M0ICzHiVuYrehZj1mYZbnM')
