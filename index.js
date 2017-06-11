@@ -74,7 +74,7 @@ rbx.setRank(options)
 
   
   if(commandIs('getroles', message)){
-  rbx.getRoles(args[0])
+  rbx.getRoles(3280471)
                     .then(function (roles) {
                     message.channel.send(roles)
                     })
